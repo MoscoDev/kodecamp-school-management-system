@@ -5,9 +5,10 @@ require('dotenv').config();
 const auth = require("./middleware/auth")
 const authRole = require("./middleware/adminAuth")
 const {getAllTeachers} = require('./modules/admin/handler')
+const cors = require('cors')
 // handles public assets
 app.use(express.static('public'));
-
+app.use(cors());
 app.use(express.json({urlEncoded: false}))
 // ejs template engine -> for parsing and using javascript in the html files
 app.set('view engine', 'ejs');
