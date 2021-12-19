@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const morgan = require('morgan');
+// const morgan = require('morgan');
 require('dotenv').config();
 const auth = require("./middleware/auth")
 const authRole = require("./middleware/adminAuth")
@@ -14,12 +14,12 @@ app.use(express.json({urlEncoded: false}))
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 const mongoose = require('mongoose')
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 // connect to mongodb
-// mongoose.connect("mongodb+srv://moscoworld:eneyeme1012@cluster0.bayok.mongodb.net/users?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://moscoworld:eneyeme1012@cluster0.bayok.mongodb.net/users?retryWrites=true&w=majority")
 
-mongoose.connect('mongodb://127.0.0.1:27017/users')
+// mongoose.connect('mongodb://127.0.0.1:27017/users')
 
 // routes component
 const route = moduleName => require(`./modules/${moduleName}/routes`);
