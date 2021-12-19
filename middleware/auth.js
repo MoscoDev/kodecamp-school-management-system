@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const { SECRET } = process.env;
 const { tokenModel} = require("../modules/admin/model");
