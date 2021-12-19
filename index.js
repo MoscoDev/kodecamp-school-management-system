@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 // const morgan = require('morgan');
-require('dotenv').config();
+// require('dotenv').config();
 const auth = require("./middleware/auth")
 const authRole = require("./middleware/adminAuth")
 const {getAllTeachers} = require('./modules/admin/handler')
